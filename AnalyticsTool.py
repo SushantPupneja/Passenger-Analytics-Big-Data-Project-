@@ -9,8 +9,7 @@ from Utility import Utility
 import threading
 import time
 
-# host = "192.168.1.200"
-host = "aitat2.ckfsniqh1gly.us-west-2.rds.amazonaws.com"
+host = "192.168.1.200"
 user = "IndigoDev"
 db = "IndigoDev"
 passwd = "IndigoDev"
