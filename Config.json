@@ -1,0 +1,43 @@
+{
+  "big_data_config": {
+  "gp_process":"True",
+  "from_date":"2017-06-02 00:00:00",
+  "to_date":"2017-06-03 23:59:59",
+  "similarity":"",
+  "sp_process":[],
+  "check_flag":"False"
+   },
+
+  "_mysql_local": {
+       "host":"192.168.1.200",
+       "user":"IndigoProd",
+       "passwd":"IndigoProd",
+       "db":"IndigoProd"
+   },
+   "_mysql_ai_dev": {
+       "host":"localhost",
+       "user":"AirIndiaDev",
+       "passwd":"AirIndiaDev",
+       "db":"AirIndiaDev"
+   },
+   "_mysql_indigo_dev": {
+       "host":"localhost",
+       "user":"IndigoDev",
+       "passwd":"IndigoDev",
+       "db":"IndigoDev"
+   },
+
+   "_unprocessed":"/home/gmrtest/faceRecong/unprocessed",
+   "_processed":"/home/gmrtest/faceRecong/processed",
+   "_logs":"./logs",
+   "_localhost":"localhost",
+   "_logmode":"File",
+   "_sleep_time":900,
+   "search_remove_ind_sleep_time":300,
+   "face_match_threshold":85,
+   "remove_grp_sleep_time":900,
+   "rekognition_collection_name":"toAmazon",
+   "multi_face_coll_flag":true,
+   "sleepTime_addToColl":10
+}
+
