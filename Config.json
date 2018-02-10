@@ -1,11 +1,24 @@
 {
   "big_data_config": {
   "gp_process":"True",
-  "from_date":"2017-06-02 00:00:00",
-  "to_date":"2017-06-03 23:59:59",
+  "from_date":"",
+  "to_date":"",
   "similarity":"",
   "sp_process":[],
-  "check_flag":"False"
+  "check_flag":"False",
+  "threshold_similarity":"85",
+  "footfall_conversion_process": "True",
+  "queue_wait_process":"True",
+    "pax_flow_analyzer": "False"
+   },
+
+   "report_filters":{"shop_filter":"Karachi Bakery", "flight_filter":"", "destination_filter":""},
+
+   "_mysql_big_data": {
+       "host":"aitat2.ckfsniqh1gly.us-west-2.rds.amazonaws.com",
+       "user":"GMRAnalytics",
+       "passwd":"GMRAnalytics",
+       "db":"GMRAnalytics"
    },
 
   "_mysql_local": {
@@ -15,18 +28,30 @@
        "db":"IndigoProd"
    },
    "_mysql_ai_dev": {
-       "host":"localhost",
+       "host":"aitat2.ckfsniqh1gly.us-west-2.rds.amazonaws.com",
        "user":"AirIndiaDev",
        "passwd":"AirIndiaDev",
        "db":"AirIndiaDev"
    },
    "_mysql_indigo_dev": {
-       "host":"localhost",
+       "host":"aitat2.ckfsniqh1gly.us-west-2.rds.amazonaws.com",
        "user":"IndigoDev",
        "passwd":"IndigoDev",
        "db":"IndigoDev"
    },
-
+   "AWS":{
+       "AWS_ACCESS_KEY":"AKIAIK6E4HMSDPGXX6ZQ",
+       "AWS_ACCESS_SECRET_KEY":"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",
+       "bucket_name":"pttest1",
+       "bucket_location":"us-west-2"
+   },
+   "kairos":{
+       "kairos_app_id":"1ac4cf39",
+       "kairos_app_key":"09503a47acb0bed87450b35f8a2e37a8",
+       "kairos_uploadIndImgPath":"",
+       "kairos_getGrpImgPath":"",
+       "kairos_galleryName":"IndImages"
+   },
    "_unprocessed":"/home/gmrtest/faceRecong/unprocessed",
    "_processed":"/home/gmrtest/faceRecong/processed",
    "_logs":"./logs",

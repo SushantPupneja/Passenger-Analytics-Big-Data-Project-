@@ -4,18 +4,19 @@ import re
 import pandas as pd
 import json
 import os
-from sqlalchemy import create_engine
+# from sqlalchemy import create_engine
 from Utility import Utility
 import threading
 import time
 
 host = "192.168.1.200"
+#host = "aitat2.ckfsniqh1gly.us-west-2.rds.amazonaws.com"
 user = "IndigoDev"
 db = "IndigoDev"
 passwd = "IndigoDev"
 
 # create a database connection for processing using sqlalchmey
-engine = create_engine('mysql://GMRAnalytics:GMRAnalytics@aitat2.ckfsniqh1gly.us-west-2.rds.amazonaws.com/GMRAnalytics')
+#engine = create_engine('mysql://GMRAnalytics:GMRAnalytics@aitat2.ckfsniqh1gly.us-west-2.rds.amazonaws.com/GMRAnalytics')
 
 # create a database connection for processing using MYSQLdb
 db = MySQLdb.connect(host=host, user=user, passwd=passwd, db=db)
@@ -27,6 +28,7 @@ columns = ['date', 'time', 'image_key', 'face_id', 'image_type', 'gender', 'age'
 #location mapping object
 locations = {"ICam011": "Tifin Express", "ICam012": "Karachi Bakery"}
 
+# insert received row in the BIG_DATA table
 def insert_table(row, utility):
     df_ = pd.DataFrame(columns=columns)
     df_.loc[0] = row
@@ -84,9 +86,8 @@ def check_analytic_true(img_id, utility):
         utility.loginfofile("Database query Failed while updating status for thread " + str(threading.currentThread().getName()) + str(e))
         return False
 
+
 # process individual images
-
-
 def process_ind_image(image_key, log_id):
     # create an object for Utility
     utility = Utility(log_file="big_data_process_log_file.txt", debug=1)
@@ -231,6 +232,7 @@ def process_ind_image(image_key, log_id):
         return False
 
 # process group images
+
 
 def process_grp_image(image_key, log_id):
     # create an object for Utility
@@ -397,5 +399,4 @@ else:
 
 
 # BIG_DATA sql:
-
 # CREATE TABLE BIG_DATA (id int(11) PRIMARY KEY auto_increment, date date, time time, image_key VARCHAR(100), face_id VARCHAR(100), type VARCHAR(25), gender VARCHAR(25), age VARCHAR(25), matched_grp_key VARCHAR(100), similarity VARCHAR(10), location VARCHAR(25), emotion VARCHAR(25), psngr_pnr VARCHAR(25), psngr_flight VARCHAR(25), flight_name VARCHAR(25), destination VARCHAR(25), time_grp VARCHAR(10), age_grp VARCHAR(10), valid_status VARCHAR(25))
